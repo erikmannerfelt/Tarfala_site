@@ -1,0 +1,15 @@
+Hejsan
+
+{% if glacier_list %}
+    <ul>
+        {% for glacier in glacier_list %}
+        <li>
+            {{glacier.glacier_name}}
+        </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>
+        No glaciers added.
+    </p>
+{% endif %}
