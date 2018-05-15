@@ -1,0 +1,19 @@
+<!-- Context: glacier_list, massif_pk-->
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'glaciers/style.css' %}"/>
+
+{% if glacier_list %}
+    <ul>
+        {% for glacier in glacier_list %}
+            {% if glacier.massif.id == massif_pk %}
+                <li>
+                    <a href="{% url 'glaciers:article' glacier.id %}">
+                        {{glacier}}
+                    </a>
+                </li>
+
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endif %}

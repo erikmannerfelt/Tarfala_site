@@ -1,10 +1,18 @@
-Hejsan
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'glaciers/style.css' %}"/>
+
+
+<h1>Glaciers</h1>
+
+<h2><a href="{% url 'glaciers:massifs' %}">Massifs</a></h2>
 
 {% if glacier_list %}
     <ul>
         {% for glacier in glacier_list %}
         <li>
-            {{glacier.glacier_name}}
+            <a href="{% url 'glaciers:article' glacier.id %}">
+                {{glacier.id}}: {{glacier.glacier_name}}
+            </a>
         </li>
         {% endfor %}
     </ul>

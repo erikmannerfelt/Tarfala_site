@@ -1,0 +1,16 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'glaciers/style.css' %}"/>
+
+{% if massifs_list %}
+    <ul>
+        {% for massif in massifs_list %}
+            <li>
+                <a href="{% url 'glaciers:massif_glaciers' massif.id %}">
+                    {{massif.massif_name}}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    No massifs registered.
+{% endif %}

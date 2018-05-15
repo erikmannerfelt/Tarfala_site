@@ -15,7 +15,7 @@ class MassifAdmin(admin.ModelAdmin):
 
 class GlacierAdmin(admin.ModelAdmin):
     fieldsets = [
-        (None,             {"fields": ["glacier_name"]}),
+        (None,             {"fields": ["massif", "glacier_name"]}),
         ("Properties",     {"fields": ["glacier_length"]})
                 ]
 
