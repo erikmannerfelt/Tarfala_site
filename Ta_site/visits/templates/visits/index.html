@@ -1,0 +1,13 @@
+{% if visit_list %}
+    <ul>
+        {% for visit in visit_list %}
+            <li>
+                <a href="{% url 'visits:article' visit.id %}">
+                    {{visit.citation}}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    No visits available.
+{% endif %}

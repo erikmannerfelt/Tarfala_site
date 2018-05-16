@@ -17,13 +17,9 @@ class IndexView(generic.ListView):
         return Glacier.objects.all()
 
 
-def articleb(request, pk):
-    """Shows the article for the specified glacier"""
-    return render(request, "glaciers/articles/glacier_{}.html".format(pk))
-
 def article(request, pk):
     """Shows the article for the specified glacier"""
-    return render(request, "glaciers/article.html", context={"article_name": "articles/glacier_{}.html".format(pk)})
+    return render(request, "glaciers/article.html", context={"article_name": "glaciers/articles/glacier_{}.html".format(pk)})
 
 
 class MassifView(generic.ListView):

@@ -16,8 +16,11 @@ class MassifAdmin(admin.ModelAdmin):
 class GlacierAdmin(admin.ModelAdmin):
     fieldsets = [
         (None,             {"fields": ["massif", "glacier_name"]}),
-        ("Properties",     {"fields": ["glacier_length"]})
+        ("Properties",     {"fields": ["glacier_length", "glacier_area"]})
                 ]
+    list_display = ["glacier_name", "massif", "glacier_area"]
+    list_filter = ["massif"]
+    search_fields = ["glacier_name"]
 
 # Register your models here.
 admin.site.register(Massif, MassifAdmin)
